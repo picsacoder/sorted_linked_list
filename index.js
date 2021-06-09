@@ -44,7 +44,12 @@ function linked_list() {
             while (nodo_actual != last) {
                 let sig = nodo_actual.next;
                 if (nodo_actual.elem > sig.elem) {
-                    [nodo_actual.elem, sig.elem] = [sig.elem, nodo_actual.elem]
+                    var x = document.getElementById(nodo_actual.elem);
+                    var y = document.getElementById(sig.elem);
+
+                    [x.id, y.id] = [y.id, x.id];
+                    [x.innerHTML, y.innerHTML] = [y.innerHTML, x.innerHTML];
+                    [nodo_actual.elem, sig.elem] = [sig.elem, nodo_actual.elem];
                 }
 
                 nodo_actual = sig
@@ -60,22 +65,6 @@ lista = new linked_list();
 
 
 
-//lista.anadir(3)
-//lista.anadir(1)
-//lista.anadir(5)
-//lista.anadir(6)
-
-
-//lista.inicio()
-
-
-//console.log("=====================================================================================================================================================")
-
-//lista.sort()
-
-//lista.inicio()
-
-
 function anadir() {
     var value_to_add = document.getElementById("anadir");
 
@@ -83,8 +72,8 @@ function anadir() {
 
     //chek if is a number 
 
-    var is_number = parseInt(value_to_add.value);
-
+    var is_number = parseFloat(value_to_add.value);
+    
     if (!is_number) { 
         alert("Introduzca un valor que sea un número")
     }
@@ -92,12 +81,14 @@ function anadir() {
     else { 
         var visual_node = document.createElement("p");
         visual_node.innerHTML = value_to_add.value;
-
+        visual_node.id = value_to_add.value;
         document.body.appendChild(visual_node)
 
         lista.anadir(is_number)
 
         lista.inicio()
+
+        value_to_add.value = ""
     }
 
     
@@ -105,5 +96,6 @@ function anadir() {
 }
 
 function ordenar() { 
-    
+    lista.sort()
+    lista.inicio()
 }
