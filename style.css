@@ -25,3 +25,11 @@ button :active {
 p { 
     font-size: 40px;
 }
+
+img {
+    width: 150px;
+}
+
+body { 
+    background-color: rgb(0, 173, 185);
+}

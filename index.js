@@ -1,3 +1,9 @@
+function add_img() {
+    var imgh = document.createElement("img");
+    imgh.src = "./img/flecha.png";
+    document.body.appendChild(imgh);
+}
+
 function linked_list() { 
     var inicio = null;
     var cola = null
@@ -17,14 +23,17 @@ function linked_list() {
             inicio = nodo;
             cola = nodo;
 
-            
         } //Checa si el inicio de la lista esta vacio, en caso de que si el nodo pasa a ser el primer elemento
 
         else { 
+
             cola.next = nodo;
             nodo.prev = cola;
             cola = nodo;
-            
+
+            add_img()
+
+        
         }
 
     };
@@ -59,7 +68,24 @@ function linked_list() {
         }
     };
 
+    this.existe = function(elem) { 
+        var nodo_actual = inicio;
+
+        var indice = -1
+
+        while(nodo_actual) { 
+            indice++
+
+            if (nodo_actual.elem === elem) {
+                return true;
+            }
+
+            nodo_actual = nodo_actual.next
+        };
+    }
 }
+
+
 
 lista = new linked_list();
 
@@ -74,21 +100,28 @@ function anadir() {
 
     var is_number = parseFloat(value_to_add.value);
     
-    if (!is_number) { 
+    if (isNaN(is_number)) { 
         alert("Introduzca un valor que sea un número")
     }
 
     else { 
+        if (lista.existe(is_number)) { 
+            alert("Inserte un elemento que no este en la lista")
+        }
+
+        else { 
         var visual_node = document.createElement("p");
         visual_node.innerHTML = value_to_add.value;
         visual_node.id = value_to_add.value;
+        lista.anadir(is_number)
         document.body.appendChild(visual_node)
 
-        lista.anadir(is_number)
-
+        
+    
         lista.inicio()
 
         value_to_add.value = ""
+        }
     }
 
     
