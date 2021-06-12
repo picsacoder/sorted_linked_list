@@ -105,6 +105,11 @@ function anadir() {
     }
 
     else { 
+        var valor = value_to_add.value;
+        var v = toString(valor);
+
+        console.log(v) //undefined
+        
         if (lista.existe(is_number)) { 
             alert("Inserte un elemento que no este en la lista")
         }
@@ -112,6 +117,10 @@ function anadir() {
         else { 
         var visual_node = document.createElement("p");
         visual_node.innerHTML = value_to_add.value;
+		
+		if (visual_node.value) { }
+		if (visual_node.value) { }
+		
         visual_node.id = value_to_add.value;
         lista.anadir(is_number)
         document.body.appendChild(visual_node)
@@ -127,6 +136,7 @@ function anadir() {
     
 
 }
+
 
 function ordenar() { 
     lista.sort()
