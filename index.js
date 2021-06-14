@@ -108,7 +108,7 @@ function anadir() {
         var valor = value_to_add.value;
         var v = toString(valor);
 
-        console.log(v) //undefined
+        console.log(valor) //undefined
         
         if (lista.existe(is_number)) { 
             alert("Inserte un elemento que no este en la lista")
@@ -118,8 +118,7 @@ function anadir() {
         var visual_node = document.createElement("p");
         visual_node.innerHTML = value_to_add.value;
 		
-		if (visual_node.value) { }
-		if (visual_node.value) { }
+
 		
         visual_node.id = value_to_add.value;
         lista.anadir(is_number)
@@ -129,13 +128,25 @@ function anadir() {
     
         lista.inicio()
 
-        value_to_add.value = ""
+        //value_to_add.value = ""
         }
     }
 
     
 
 }
+
+//this function detect when someone press ENTER OwO
+
+function pressEnter(){ 
+    document.addEventListener("keyup", function(event) {
+        if (event.code === "Enter") { 
+            var value_to_add = document.getElementById("anadir");
+            //chek if is a number 
+            var is_number = parseFloat(value_to_add.value);
+        }
+    });
+};
 
 
 function ordenar() { 
