@@ -106,47 +106,59 @@ function anadir() {
 
     else { 
         var valor = value_to_add.value;
-        var v = toString(valor);
+ 
 
-        console.log(valor) //undefined
-        
+        console.log(valor) //
+
+    
+
+
         if (lista.existe(is_number)) { 
             alert("Inserte un elemento que no este en la lista")
         }
 
-        else { 
-        var visual_node = document.createElement("p");
-        visual_node.innerHTML = value_to_add.value;
-		
+        else {
+	
+            if (value_to_add.value.startsWith(".")) {
+                
+                var OvO = value_to_add.value.split(".");
+                console.log("OwO");
+                var OwO = `0.${OvO[1]}`;
+                var UwU = parseFloat(OwO);
+              	 
+		var visual_node = document.createElement("p");
 
-		
-        visual_node.id = value_to_add.value;
-        lista.anadir(is_number)
-        document.body.appendChild(visual_node)
+		visual_node.innerHTML = OwO;
+		visual_node.id = OwO;
+		lista.anadir(UwU);
+		document.body.appendChild(visual_node);
+		lista.inicio();
 
+            }
         
-    
-        lista.inicio()
+
+		else {     
+                var visual_node = document.createElement("p");
+                visual_node.innerHTML = value_to_add.value;
+                
+
+                
+                visual_node.id = value_to_add.value;
+                lista.anadir(is_number)
+                document.body.appendChild(visual_node)
+
+                    
+            
+                lista.inicio()
+		}
 
         //value_to_add.value = ""
         }
     }
-
-    
-
 }
 
 //this function detect when someone press ENTER OwO
 
-function pressEnter(){ 
-    document.addEventListener("keyup", function(event) {
-        if (event.code === "Enter") { 
-            var value_to_add = document.getElementById("anadir");
-            //chek if is a number 
-            var is_number = parseFloat(value_to_add.value);
-        }
-    });
-};
 
 
 function ordenar() { 
