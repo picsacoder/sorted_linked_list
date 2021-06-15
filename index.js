@@ -1,6 +1,6 @@
 function add_img() {
     var imgh = document.createElement("img");
-    imgh.src = "./img/flecha.png";
+    imgh.src = "./img/owo.png";
     document.body.appendChild(imgh);
 }
 

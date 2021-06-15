@@ -32,4 +32,23 @@ img {
 
 body { 
     background-color: rgb(0, 173, 185);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer { 
+    align-self: flex-end;
+    width: 100%;
+    padding: 1em;
+
+}
+
+img { 
+    max-width: 100%;
+    height: auto;
+    
+}
+
+p { 
+    padding: 1em;
 }
