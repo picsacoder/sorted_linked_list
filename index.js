@@ -147,6 +147,8 @@ function anadir() {
             }
 
         }
+
+        value_to_add.value = ""
     }
 }
 
@@ -154,13 +156,17 @@ function anadir() {
 
 let inpt = document.querySelector('input');
 
-inpt.addEventListener("keyup", function(e) {
-    if (e.keyCode === 13) {
-        console.log("aaa")
+function FuncionInutil(event) {
+    var codigo = event.keyCode;
+     
+    if(codigo === 13){
+      anadir()
     }
-});
+    
+ }
+
 
 function ordenar() { 
-    lista.sort()
-    lista.inicio()
+    lista.sort();
+    lista.inicio();
 }
