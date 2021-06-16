@@ -143,6 +143,7 @@ function anadir() {
                 document.body.appendChild(visual_node)
 
                 lista.inicio()
+                
             }
 
         }
@@ -153,7 +154,7 @@ function anadir() {
 
 let inpt = document.querySelector('input');
 
-inpt.addEventListener("keyup", (e) => {
+inpt.addEventListener("keyup", function(e) {
     if (e.keyCode === 13) {
         console.log("aaa")
     }
