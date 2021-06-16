@@ -1,6 +1,6 @@
 function add_img() {
     var imgh = document.createElement("img");
-    imgh.src = "./img/owo.png";
+    imgh.src = "./img/flecha.png";
     document.body.appendChild(imgh);
 }
 
@@ -94,8 +94,6 @@ lista = new linked_list();
 function anadir() {
     var value_to_add = document.getElementById("anadir");
 
-
-
     //chek if is a number 
 
     var is_number = parseFloat(value_to_add.value);
@@ -110,9 +108,6 @@ function anadir() {
 
         console.log(valor) //
 
-    
-
-
         if (lista.existe(is_number)) { 
             alert("Inserte un elemento que no este en la lista")
         }
@@ -126,40 +121,43 @@ function anadir() {
                 var OwO = `0.${OvO[1]}`;
                 var UwU = parseFloat(OwO);
               	 
-		var visual_node = document.createElement("p");
+                var visual_node = document.createElement("p");
 
-		visual_node.innerHTML = OwO;
-		visual_node.id = OwO;
-		lista.anadir(UwU);
-		document.body.appendChild(visual_node);
-		lista.inicio();
+                visual_node.innerHTML = OwO;
+                visual_node.id = OwO;
+                lista.anadir(UwU);
+                document.body.appendChild(visual_node);
+                lista.inicio();
 
             }
         
 
-		else {     
+            else {     
                 var visual_node = document.createElement("p");
                 visual_node.innerHTML = value_to_add.value;
-                
+                    
 
-                
+                    
                 visual_node.id = value_to_add.value;
                 lista.anadir(is_number)
                 document.body.appendChild(visual_node)
 
-                    
-            
                 lista.inicio()
-		}
+            }
 
-        //value_to_add.value = ""
         }
     }
 }
 
-//this function detect when someone press ENTER OwO
+//this function detect when someone press ENTER
 
+let inpt = document.querySelector('input');
 
+inpt.addEventListener("keyup", (e) => {
+    if (e.keyCode === 13) {
+        console.log("aaa")
+    }
+});
 
 function ordenar() { 
     lista.sort()
