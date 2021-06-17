@@ -30,9 +30,7 @@ function linked_list() {
             cola.next = nodo;
             nodo.prev = cola;
             cola = nodo;
-
             add_img()
-
         
         }
 
@@ -42,7 +40,6 @@ function linked_list() {
         console.log(inicio)
         return inicio;
     };
-
 
     this.sort = function() { 
         let last = cola;
